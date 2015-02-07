@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="svgTestApp" ng-controller="SVGController">
+<head>
+<script src="angular.min.js"></script>
+<script src="index.js"></script>
+<meta charset="utf-8">
+<title>Angular SVG Test</title>
+</head>
+<body>
+
+<svg
+  ng-attr-width="{{width}}"
+  ng-attr-height="{{height}}">
+  <rect
+    ng-repeat="point in trail"
+    ng-attr-width="{{dimensions.width}}"
+    ng-attr-height="{{dimensions.height}}"
+    ng-attr-x="{{point.x}}"
+    ng-attr-y="{{point.y}}"
+  />
+</svg>
+
+</body>
+</html>
