@@ -13,20 +13,23 @@ App.SvgTrailComponent = Ember.Component.extend({
     height: tick
   },
   didInsertElement: function () {
+    var componentContext = this;
     setInterval(function () {
-      var count = this.count;
-      var tick = this.tick;
-      var width = this.width;
-      var dimensions = this.dimensions;
+      Ember.run(function () {
+        var count = componentContext.count;
+        var tick = componentContext.tick;
+        var width = componentContext.width;
+        var dimensions = componentContext.dimensions;
 
-      var newPoint = {
-        x: count % width,
-        y: Math.floor(count / width) * tick,
-        dimensions: this.dimensions
-      };
+        var newPoint = {
+          x: count % width,
+          y: Math.floor(count / width) * tick,
+          dimensions: componentContext.dimensions
+        };
 
-      this.set('trail', this.trail.concat(newPoint));
-      this.set('count', count + tick);
-    }.bind(this), 0);
+        componentContext.set('trail', componentContext.trail.concat(newPoint));
+        componentContext.set('count', count + tick);
+      });
+    }, 0);
   }
 });
