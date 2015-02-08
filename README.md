@@ -8,7 +8,7 @@ I routinely render large numbers of items, and so do many others. I also want to
 My Om version is probably garbage. Please fix if you are a Clojure God.
 
 # Demo
-See gh-pages demo [here](http://kimagure.github.io/frameworks-svg-test)
+See gh-pages demo [here](http://justinwoo.github.io/frameworks-svg-test)
 
 # Rules
 
